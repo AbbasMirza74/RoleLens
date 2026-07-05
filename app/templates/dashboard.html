@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}RoleLens{% endblock %}
+{% block content %}
+<div class="hero">
+    <div class="glass-card">
+        <h1>RoleLens – AI Resume Analyzer</h1>
+        <p>Upload your resume and let Machine Learning analyze it.</p>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="upload-box">
+                <label for="resume">Select Resume (PDF/DOCX)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+            </div>
+            <button type="submit" class="predict-btn">Analyze Resume</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
