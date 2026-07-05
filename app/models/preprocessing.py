@@ -1,8 +1,13 @@
 import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import nltk
+try:
+    stop_words = set(stopwords.words("english"))
+except LookupError:
+    nltk.download("stopwords", quiet=True)
+    stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
-stop_words = set(stopwords.words("english"))
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'\S+@\S+', ' ', text)
